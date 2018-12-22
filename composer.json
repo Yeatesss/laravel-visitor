@@ -1,0 +1,35 @@
+{
+    "name": "yeates/laravel-visitor",
+    "description": "Record the basic information of visitors",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yeates",
+            "email": "ye3245@sina.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Yeates\\Visitor\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {
+        "php" : "^7.1",
+        "illuminate/config": "~5.5.0|~5.6.0|~5.7.0",
+        "illuminate/database": "~5.5.0|~5.6.0|~5.7.0",
+        "illuminate/support": "~5.5.0|~5.6.0|~5.7.0",
+        "ixudra/curl": "6.16"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yeates\\Visitor\\VisitorServiceProvider"
+            ]
+        }
+    }
+}
