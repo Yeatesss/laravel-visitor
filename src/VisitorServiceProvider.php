@@ -2,6 +2,8 @@
 namespace Yeates\Visitor;
 
 use \Illuminate\Support\ServiceProvider;
+use Yeates\Visitor\Channels\FreeIpChannel;
+use Yeates\Visitor\Channels\TaoBaoIpChannel;
 use Yeates\Visitor\Services\IpHandleService;
 
 class VisitorServiceProvider extends ServiceProvider
@@ -34,6 +36,7 @@ class VisitorServiceProvider extends ServiceProvider
         $this->app->bind('FreeIpChannel', function () {
             return new FreeIpChannel();
         });
+       
 //        $this->bindFunction(IpHandleService::RESOLVE_IP_CHANNEL);
 //        $this->app->singleton(ActivityLogStatus::class);
     }

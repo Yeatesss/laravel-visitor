@@ -1,5 +1,5 @@
 <?php
-namespace Yeates\Visitor;
+namespace Yeates\Visitor\Channels;
 
 
 
