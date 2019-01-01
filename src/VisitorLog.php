@@ -17,12 +17,16 @@ class VisitorLog{
         $this->ipHandleService = $ipHandleService;
     }
 
-    public function requestLog($guard_name='',$ip='',$request,$description=''){
+    public function getRequestData(){
+        return ['method'=>request()->getMethod(),'url'=>request()->path(),'data'=>request()->input()];
+    }
+
+    public function requestLog($guard_name='',$ip='',$requestData,$description=''){
         $visitorLog['description'] = $description;
 
-        $requestData['request_method'] = $request->getMethod();
-        $requestData['request_url'] = $request->path();
-        $requestData['request_data'] = json_encode(request()->input());
+        $requestData['request_method'] = $requestData['method'];
+        $requestData['request_url'] = $requestData['url'];
+        $requestData['request_data'] = json_encode($requestData['data']);
         $visitorRequest = VisitorRequest::create($requestData);
         $visitorLog['visitor_request_id']=$visitorRequest->id;
         if(empty($ip)){
