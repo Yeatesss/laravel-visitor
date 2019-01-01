@@ -22,7 +22,7 @@ class IpHandleService{
         $channel = self::RESOLVE_IP_CHANNEL;
         $handleData = [];
         $visitorIpPool = VisitorIpPool::where('ip',$ip)->first();
-        if(!empty($visitorIpPool)){
+        if(empty($visitorIpPool)){
             try{
                 array_walk($channel,function($channel)use($ip,&$handleData){
                     $channelClass = app($channel);
