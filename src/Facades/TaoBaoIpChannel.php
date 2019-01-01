@@ -9,6 +9,6 @@ class TaoBaoIpChannel extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Yeates\Visitor\TaoBaoIpChannel::class;
+        return \Yeates\Visitor\Channels\TaoBaoIpChannel::class;
     }
 }

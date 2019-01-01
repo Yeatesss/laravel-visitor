@@ -1,13 +1,13 @@
 <?php
 namespace Yeates\Visitor\Services;
 
-use Yeates\Visitor\Facades\TaoBaoIpChannel;
 
 class IpHandleService{
-    const RESOLVE_IP_CHANNEL = ['TaoBaoIpChannel','FreeIpChannel'];
+    const RESOLVE_IP_CHANNEL = ['TaoBaoIpChannel','FreeIpChannel','CzIpChannel'];
     const RESOLVE_IP_URL = [
         'TaoBaoIpChannel'=>"http://ip.taobao.com/service/getIpInfo.php?ip=[IP]",
         'FreeIpChannel'=>"http://freeapi.ipip.net/[IP]",
+        'CzIpChannel'=>'../Datas/CzData.dat'
     ];
     public $country = '';
     public $region = '';

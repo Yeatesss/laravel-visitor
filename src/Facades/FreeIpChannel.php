@@ -9,6 +9,6 @@ class FreeIpChannel extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Yeates\Visitor\FreeIpChannel::class;
+        return \Yeates\Visitor\Channels\FreeIpChannel::class;
     }
 }
