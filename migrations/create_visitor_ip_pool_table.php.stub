@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVisitorIpPoolTables extends Migration
+class CreateVisitorIpPoolTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateVisitorIpPoolTables extends Migration
      */
     public function up()
     {
-        Schema::create('visitor_ip_pool', function (Blueprint $table) {
+        Schema::create('visitor_ip_pools', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ip')->index();
             $table->string('country')->nullable();

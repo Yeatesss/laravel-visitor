@@ -1,7 +1,7 @@
 <?php
 namespace Yeates\Visitor\Models;
 use Illuminate\Database\Eloquent\Model;
-class VisitorLog extends Model{
+class VisitorLogger extends Model{
     protected $fillable = ['guard_name','auth_user_id','visitor_ip_id','visitor_request_id','description'];
 
 

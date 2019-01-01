@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVisitorLogsTable extends Migration
+class CreateVisitorLoggerTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create(config('visitor_logs'), function (Blueprint $table) {
+        Schema::create('visitor_loggers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('guard_name')->nullable();
             $table->integer('auth_user_id')->nullable();
@@ -28,6 +28,6 @@ class CreateVisitorLogsTable extends Migration
      */
     public function down()
     {
-        Schema::drop(config('visitor_logs'));
+        Schema::drop('visitor_log');
     }
 }
