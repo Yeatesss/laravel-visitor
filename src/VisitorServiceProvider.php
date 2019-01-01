@@ -24,7 +24,7 @@ class VisitorServiceProvider extends ServiceProvider
         if (! class_exists('CreateVisitorLogsTable')) {
             $timestamp = date('Y_m_d_His', time());
             $this->publishes([
-                __DIR__ . '/../migrations/create_visitor_log_table.php.stub' => database_path("/migrations/{$timestamp}_create_visitor_logs_table.php"),
+                __DIR__ . '/../migrations/create_visitor_logger_table.php.stub' => database_path("/migrations/{$timestamp}_create_visitor_logger_table.php"),
             ], 'migrations');
         };
         if (! class_exists('CreateVisitorRequestsTable')) {
