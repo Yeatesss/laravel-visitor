@@ -17,7 +17,20 @@ class VisitorServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../migrations/create_visitor_ip_pool_table.php.stub' => database_path("/migrations/{$timestamp}_create_visitor_ip_pool_table.php"),
             ], 'migrations');
-        }
+        };
+        if (! class_exists('CreateVisitorLogsTable')) {
+            $timestamp = date('Y_m_d_His', time());
+            $this->publishes([
+                __DIR__.'/../migrations/create_visitor_logs_table.php.stub' => database_path("/migrations/{$timestamp}_create_visitor_logs_table.php"),
+            ], 'migrations');
+        };
+        if (! class_exists('CreateVisitorRequestsTable')) {
+            $timestamp = date('Y_m_d_His', time());
+            $this->publishes([
+                __DIR__.'/../migrations/create_visitor_requests_table.php.stub' => database_path("/migrations/{$timestamp}_create_visitor_requests_table.php"),
+            ], 'migrations');
+        };
+
     }
     public function register()
     {

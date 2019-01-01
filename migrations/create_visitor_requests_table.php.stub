@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateVisitorRequestsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create(config('visitor_requests'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('request_method')->nullable();
+            $table->string('request_url',150)->nullable();
+            $table->text('request_data')->nullable();
+            $table->timestamps();
+
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::drop(config('visitor_requests'));
+    }
+}
